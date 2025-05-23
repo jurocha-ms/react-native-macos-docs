@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -10,6 +11,7 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const { baseUrl } = siteConfig;
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -37,6 +39,11 @@ function HomepageHeader() {
             Learn the Basics
           </Link>
         </div>
+        <React.Fragment>
+          <div width={400}>
+            <img alt="" src={baseUrl + "img/platform.png"} />
+          </div>
+        </React.Fragment>
       </div>
     </header>
   );

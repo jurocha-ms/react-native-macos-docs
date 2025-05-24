@@ -26,6 +26,29 @@ const TwoColumns = ({ columnOne, columnTwo, reverse }) => (
   </div>
 );
 
+function HeaderHero() {
+  const {siteConfig} = useDocusaurusContext();
+  const { baseUrl } = siteConfig;
+  <Section background="light">
+    <TwoColumns
+      reverse
+      columnOne={
+        <React.Fragment>
+          <div width={400}>
+            <img alt="TODO: ALT" src={baseUrl + "img/platform.png"} />
+          </div>
+        </React.Fragment>
+      }
+      columnTwo={
+        <React.Fragment>
+          <h1>React Native for</h1>
+          <p>macOS</p>
+        </React.Fragment>
+      }
+    />
+  </Section>
+}
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const { baseUrl } = siteConfig;

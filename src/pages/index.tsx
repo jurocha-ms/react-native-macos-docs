@@ -9,6 +9,23 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
+const Section = ({ children, className, background = "light" }) => (
+  <section className={`Section ${className} ${background}`}>
+    {children}
+  </section>
+);
+
+const TwoColumns = ({ columnOne, columnTwo, reverse }) => (
+  <div className={`TwoColumns ${reverse ? "reverse" : ""}`}>
+    <div className={`column first ${reverse ? "right" : "left"}`}>
+      {columnOne}
+    </div>
+    <div className={`column last ${reverse ? "left" : "right"}`}>
+      {columnTwo}
+    </div>
+  </div>
+);
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const { baseUrl } = siteConfig;
